@@ -1,0 +1,41 @@
+namespace NumberPyramid
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+
+            int current = 1;
+            bool isBigger = false;
+            string currentString = "";
+
+            for (int rows = 1; rows <= n; rows++)
+            {
+                if (current <= n)
+                {
+                    for (int cols = 1; cols <= rows; cols++)
+                    {
+                        if (current <= n)
+                        {
+
+                            if (cols <= rows)
+                            {
+                                currentString += current + " ";
+                                current++;
+
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                    }
+                Console.WriteLine(currentString);
+                currentString = "";
+                }
+            }
+
+        }
+    }
+}

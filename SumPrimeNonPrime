@@ -1,0 +1,47 @@
+namespace SumPrimeNonPrime
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string n = Console.ReadLine();
+            int prime = 0;
+            int nonPrime = 0;
+
+            while (n != "stop")
+            {
+                int m = int.Parse(n);
+                
+
+                if(m < 0)
+                {
+                    Console.WriteLine("Number is negative.");
+                    n = Console.ReadLine();
+                    continue;
+                }
+
+                bool isPrime = true;
+
+                for (int i = 2; i < m; i++)
+                {
+                   if (m % i == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime)
+                {
+                    prime += m;
+                }
+                else
+                {
+                    nonPrime += m;
+                }
+                n = Console.ReadLine();
+            }
+            Console.WriteLine($"Sum of all prime numbers is: {prime}");
+            Console.WriteLine($"Sum of all non prime numbers is: {nonPrime}");
+        }
+    }
+}
